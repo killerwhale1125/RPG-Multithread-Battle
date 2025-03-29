@@ -44,7 +44,7 @@ public class ChangeJobService {
 
     private void showCompletedJobChangeResult(Hero hero) throws InterruptedException {
         System.out.println("전직을 진행 중 입니다...");
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         showJobAbility(hero);
     }
 
