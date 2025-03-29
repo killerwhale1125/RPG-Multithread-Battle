@@ -3,13 +3,18 @@ package adventure.hero.job;
 import adventure.hero.Hero;
 import adventure.hero.DefaultHeroType;
 import adventure.hero.skill.Skill;
+import adventure.hero.skill.archer.CriticalShot;
+import adventure.hero.skill.archer.Focus;
 
 import java.util.List;
+
+import static adventure.hero.skill.archer.ArcherSkillType.CRITICAL_SHOT;
+import static adventure.hero.skill.archer.ArcherSkillType.FOCUS;
 
 public class Archer extends Hero {
 
     private Archer(DefaultHeroType defaultHeroType, List<Skill> skills) {
-        super(defaultHeroType.getHp(), defaultHeroType.getName(), defaultHeroType.getPower(), skills);
+        super(defaultHeroType, skills);
     }
 
     public static Hero create() {
@@ -17,7 +22,9 @@ public class Archer extends Hero {
     }
 
     private static List<Skill> createDefaultSkills() {
-        return List.of();
+        Skill criticalShot = CriticalShot.create();
+        Skill focus = Focus.create();
+        return List.of(criticalShot, focus);
     }
 
     @Override

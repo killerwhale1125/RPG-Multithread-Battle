@@ -11,7 +11,7 @@ import static adventure.hero.DefaultHeroType.*;
 public class Default extends Hero {
 
     private Default(DefaultHeroType defaultHeroType, List<Skill> skills) {
-        super(defaultHeroType.getHp(), defaultHeroType.getName(), defaultHeroType.getPower(), skills);
+        super(defaultHeroType, skills);
     }
 
     public static Hero create() {

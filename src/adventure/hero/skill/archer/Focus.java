@@ -4,14 +4,16 @@ import adventure.hero.skill.BuffSkill;
 import adventure.hero.skill.Skill;
 import adventure.hero.skill.SkillType;
 
+import static adventure.hero.skill.archer.ArcherSkillType.FOCUS;
+
 public class Focus extends Skill implements BuffSkill {
 
     private Focus(SkillType skillType) {
         super(skillType);
     }
 
-    public static Skill create(SkillType skillType) {
-        return new Focus(skillType);
+    public static Skill create() {
+        return new Focus(FOCUS);
     }
 
     @Override

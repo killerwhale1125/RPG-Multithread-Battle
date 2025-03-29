@@ -13,10 +13,10 @@ public abstract class Hero {
     protected int power;
     protected List<Skill> skills;
 
-    protected Hero(int hp, String name, int power, List<Skill> skills) {
-        this.hp = hp;
-        this.name = name;
-        this.power = power;
+    protected Hero(DefaultHeroType heroType, List<Skill> skills) {
+        this.hp = heroType.getHp();
+        this.name = heroType.getName();
+        this.power = heroType.getPower();
         this.skills = skills;
     }
 
