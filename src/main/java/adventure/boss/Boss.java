@@ -1,5 +1,8 @@
 package adventure.boss;
 
+import lombok.Getter;
+
+@Getter
 public abstract class Boss {
     protected long id;
     protected String name;
@@ -11,22 +14,6 @@ public abstract class Boss {
         this.name = bossType.getName();
         this.hp = bossType.getHp();
         this.power = bossType.getPower();
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
-    public int getPower() {
-        return power;
     }
 
     public abstract void attack();

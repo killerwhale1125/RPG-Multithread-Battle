@@ -61,7 +61,7 @@ public class BossService {
     }
 
     private void showBossInfo() {
-        `System.out.println("처치할 보스를 선택해주세요.");
+        System.out.println("처치할 보스를 선택해주세요.");
         for (Map.Entry<Long, Boss> bossEntry : bossMap.entrySet()) {
             System.out.println(bossEntry.getKey() + ". " + bossEntry.getValue().getName());
         }

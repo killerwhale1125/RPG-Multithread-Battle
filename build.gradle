@@ -12,6 +12,11 @@ java {
     }
 }
 
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.30' // 최신 버전 확인 후 사용
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+}
+
 repositories {
     mavenCentral()
 }

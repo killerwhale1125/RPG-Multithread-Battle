@@ -1,6 +1,6 @@
 package adventure.hero.service;
 
-import adventure.hero.DefaultHeroType;
+import adventure.hero.DefaultAbility;
 import adventure.hero.Hero;
 import adventure.hero.archer.Archer;
 import adventure.hero.thief.Thief;
@@ -23,7 +23,7 @@ public class HeroService {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("전직할 직업을 선택해주세요.");
-        showHeroes(DefaultHeroType.values());
+        showHeroes(DefaultAbility.values());
 
         Hero hero = null;
         int input = sc.nextInt();
@@ -50,15 +50,17 @@ public class HeroService {
 
     private void showJobAbility(Hero hero) {
         System.out.println(hero.getName() + "으로 전직하셨습니다.");
-        System.out.println("힘 : " + hero.getPower());
-        System.out.println("체력 : " + hero.getHp());
+        System.out.println("STR : " + hero.getStrong());
+        System.out.println("INT : " + hero.getIntelligence());
+        System.out.println("DEX : " + hero.getDexterity());
+        System.out.println("LUK : " + hero.getLucky());
         String skills = hero.getSkills().stream().map(Skill::getName).collect(Collectors.joining(", "));
         System.out.print("보유 스킬 : " + skills + "\n");
     }
 
-    private void showHeroes(DefaultHeroType[] defaultHeroTypes) {
-        for (int i = 1; i < defaultHeroTypes.length; i++) {
-            System.out.println((i) + ". " + defaultHeroTypes[i].getName());
+    private void showHeroes(DefaultAbility[] defaultAbilities) {
+        for (int i = 1; i < defaultAbilities.length; i++) {
+            System.out.println((i) + ". " + defaultAbilities[i].getName());
         }
     }
 }
