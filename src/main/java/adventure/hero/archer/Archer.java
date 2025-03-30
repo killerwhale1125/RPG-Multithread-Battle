@@ -1,21 +1,22 @@
 package adventure.hero.archer;
 
 import adventure.hero.Hero;
-import adventure.hero.DefaultHeroType;
 import adventure.hero.Skill;
 import adventure.hero.archer.skill.CriticalShot;
 import adventure.hero.archer.skill.Focus;
 
 import java.util.List;
 
+import static adventure.hero.HeroType.ARCHER;
+
 public class Archer extends Hero {
 
-    private Archer(DefaultHeroType defaultHeroType, List<Skill> skills) {
-        super(defaultHeroType, skills);
+    private Archer(List<Skill> skills) {
+        super(ARCHER, skills);
     }
 
     public static Hero create() {
-        return new Archer(DefaultHeroType.ARCHER, createDefaultSkills());
+        return new Archer(createDefaultSkills());
     }
 
     private static List<Skill> createDefaultSkills() {

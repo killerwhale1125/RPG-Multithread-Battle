@@ -1,5 +1,8 @@
 package adventure.boss;
 
+import lombok.Getter;
+
+@Getter
 public enum BossType {
     MUSH_MOM(1, "머쉬맘", 300, 10),
     JUNIOR_BALROG(2, "주니어 발록", 500, 15);
@@ -14,22 +17,6 @@ public enum BossType {
         this.name = name;
         this.hp = hp;
         this.power = power;
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
-    public int getPower() {
-        return power;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
 }
